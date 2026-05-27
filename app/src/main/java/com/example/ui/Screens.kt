@@ -2021,11 +2021,24 @@ fun CourseDetailAndPlayerScreen(
                 AndroidView(
                     factory = { context ->
                         WebView(context).apply {
-                            settings.javaScriptEnabled = true
-                            settings.domStorageEnabled = true
-                            settings.mediaPlaybackRequiresUserGesture = false
-                            webViewClient = WebViewClient()
-                            loadUrl("https://www.youtube.com/embed/$videoId?autoplay=1&enablejsapi=1")
+
+    settings.javaScriptEnabled = true
+    settings.domStorageEnabled = true
+    settings.loadsImagesAutomatically = true
+    settings.useWideViewPort = true
+    settings.loadWithOverviewMode = true
+    settings.mediaPlaybackRequiresUserGesture = false
+    settings.allowFileAccess = true
+    settings.allowContentAccess = true
+    settings.mixedContentMode =
+        android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+
+    webViewClient = WebViewClient()
+    webChromeClient = WebChromeClient()
+
+    loadUrl(
+        "https://www.youtube.com/embed/$videoId"
+    )
                         }
                     },
                     update = { webView ->
