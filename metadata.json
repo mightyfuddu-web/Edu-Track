@@ -1,0 +1,6 @@
+{
+  "name": "EduTrack",
+  "description": "A premium student companion study app featuring custom course creation, sub-lessons, Pomodoro, interactive search, tracking status, schedules, and bookmarks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
